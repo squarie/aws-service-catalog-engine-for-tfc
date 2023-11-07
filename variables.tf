@@ -4,12 +4,13 @@
 variable "tfc_organization" {
   type        = string
   description = "GMDMSDEMO"
+  default = "GMDSDEMO"
 }
 
 variable "tfc_team" {
   type        = string
   description = "Name of the TFC team to use to provision infrastructure with in TFC"
-  default     = "aws-service-catalog"
+  default     = "owners"
 }
 
 variable "tfc_hostname" {
