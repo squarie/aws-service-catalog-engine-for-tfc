@@ -15,7 +15,7 @@ import (
 
 const TestArtifactPath = "s3://terraform-configurations-cross-account-demo/product_with_override_var.tar.gz"
 const TestArtifactType = "AWS_S3"
-const TestLaunchRoleArn = "arn:aws:iam::829064435212:role/SCLaunchRole"
+const TestLaunchRoleArn = "arn:aws-us-gov:iam::829064435212:role/SCLaunchRole"
 const TestS3BucketArtifactPath = "../../../example-product/product.tar.gz"
 const TestS3BucketArtifactFileName = "main.tf"
 const TestS3BucketArtifactFileContent = "\"bucket_name\" {\n  type = string\n}\nprovider \"aws\" {\n}\nresource \"aws_s3_bucket\" \"bucket\" {\n  bucket = var.bucket_name\n}\noutput regional_domain_name {\n  value = aws_s3_bucket.bucket.bucket_regional_domain_name\n}"

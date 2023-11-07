@@ -57,14 +57,14 @@ data "aws_iam_policy_document" "parameter_parser" {
 
     actions = ["s3:Get*"]
 
-    resources = ["arn:aws:s3:::*"]
+    resources = ["arn:aws-us-gov:s3:::*"]
 
   }
 
 }
 
 resource "aws_iam_role_policy_attachment" "parameter_parser" {
-  for_each   = toset(["arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess", "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"])
+  for_each   = toset(["arn:aws-us-gov:iam::aws:policy/AWSXrayWriteOnlyAccess", "arn:aws-us-gov:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"])
   role       = aws_iam_role.parameter_parser.name
   policy_arn = each.value
 }

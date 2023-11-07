@@ -47,3 +47,8 @@ variable "terraform_version" {
   default     = "1.5.4"
   description = "Version of Terraform Core to use in Terraform Cloud for all Service Catalog products"
 }
+variable "tfc_token"{
+  type        = string
+  description = "TFC token"
+  defualt = "ghaot-AWrmciBVhYR24xJT"
+}

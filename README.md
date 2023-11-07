@@ -84,14 +84,14 @@ If you see that provisioning is failing in a specific spoke account, it may mean
             "Sid": "GivePermissionsToTerraformCloudReferenceEngine",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::012345678901:root"
+                "AWS": "arn:aws-us-gov:iam::012345678901:root"
             },
             "Action": "sts:AssumeRole",
             "Condition": {
                 "StringLike": {
                     "aws:PrincipalArn": [
-                        "arn:aws:iam::012345678901:role/ServiceCatalogEngineForTerraformCloudSendApplyRole",
-                        "arn:aws:iam::012345678901:role/ServiceCatalogTerraformCloudParameterParserRole"
+                        "arn:aws-us-gov:iam::012345678901:role/ServiceCatalogEngineForTerraformCloudSendApplyRole",
+                        "arn:aws-us-gov:iam::012345678901:role/ServiceCatalogTerraformCloudParameterParserRole"
                     ]
                 }
             }
@@ -100,7 +100,7 @@ If you see that provisioning is failing in a specific spoke account, it may mean
             "Sid": "AllowDynamicProviderCredentials",
             "Effect": "Allow",
             "Principal": {
-                "Federated": "arn:aws:iam::012345678901:oidc-provider/app.terraform.io"
+                "Federated": "arn:aws-us-gov:iam::012345678901:oidc-provider/app.terraform.io"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {

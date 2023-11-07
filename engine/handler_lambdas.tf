@@ -71,7 +71,7 @@ data "aws_iam_policy_document" "policy_for_provision_handler" {
 }
 
 resource "aws_iam_role_policy_attachment" "provision_handler_lambda_execution" {
-  for_each   = toset(["arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess", "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"])
+  for_each   = toset(["arn:aws-us-gov:iam::aws:policy/AWSXrayWriteOnlyAccess", "arn:aws-us-gov:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"])
   role       = aws_iam_role.provisioning_handler_lambda_execution.name
   policy_arn = each.value
 }

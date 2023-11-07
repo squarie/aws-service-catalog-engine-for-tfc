@@ -122,7 +122,7 @@ resource "aws_iam_role" "example_product_launch_role" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {
-          AWS = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+          AWS = "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:root"
         }
         Condition = {
           StringLike = {
@@ -197,7 +197,7 @@ data "aws_iam_policy_document" "example_product_launch_constraint_policy" {
       "s3:PutBucketTagging"
     ]
 
-    resources = ["arn:aws:s3:::*"]
+    resources = ["arn:aws-us-gov:s3:::*"]
   }
 
   statement {

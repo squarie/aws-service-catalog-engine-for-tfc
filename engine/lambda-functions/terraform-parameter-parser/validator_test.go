@@ -115,9 +115,9 @@ func TestValidateInputWithNonIamArnThrowsParserInvalidParameterException(t *test
 			Path: TestArtifactPath,
 			Type: TestArtifactType,
 		},
-		LaunchRoleArn: "arn:aws:sts::829064435212:role/SCLaunchRole",
+		LaunchRoleArn: "arn:aws-us-gov:sts::829064435212:role/SCLaunchRole",
 	}
-	expectedErrorMessage := fmt.Sprintf(InvalidIamLaunchRoleArnErrorMessage, "arn:aws:sts::829064435212:role/SCLaunchRole")
+	expectedErrorMessage := fmt.Sprintf(InvalidIamLaunchRoleArnErrorMessage, "arn:aws-us-gov:sts::829064435212:role/SCLaunchRole")
 
 	// act
 	err := ValidateInput(input)

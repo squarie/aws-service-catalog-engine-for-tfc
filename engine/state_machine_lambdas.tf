@@ -143,14 +143,14 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution" {
   for_each = local.lambda_functions
 
   role       = aws_iam_role.state_machine_lambda[each.key].name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  policy_arn = "arn:aws-us-gov:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
 resource "aws_iam_role_policy_attachment" "lambda_xray_write_only_access" {
   for_each = local.lambda_functions
 
   role       = aws_iam_role.state_machine_lambda[each.key].name
-  policy_arn = "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
+  policy_arn = "arn:aws-us-gov:iam::aws:policy/AWSXrayWriteOnlyAccess"
 }
 
 resource "aws_iam_role_policy" "state_machine_lambda_policy" {
