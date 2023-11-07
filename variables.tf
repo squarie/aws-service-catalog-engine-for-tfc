@@ -50,5 +50,5 @@ variable "terraform_version" {
 variable "tfc_token"{
   type        = string
   description = "TFC token"
-  defualt = "ghaot-AWrmciBVhYR24xJT"
+  default = "ghaot-AWrmciBVhYR24xJT"
 }
