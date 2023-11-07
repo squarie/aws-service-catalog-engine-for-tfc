@@ -3,7 +3,7 @@
 
 variable "tfc_organization" {
   type        = string
-  description = "Name of the organization to manage infrastructure with in TFC"
+  description = "GMDMSDEMO"
 }
 
 variable "tfc_team" {
